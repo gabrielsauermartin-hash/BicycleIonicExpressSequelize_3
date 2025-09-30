@@ -23,11 +23,11 @@ export class BicycleService {
     body.append("brand", bicycle.brand),
     body.append("model", bicycle.model);
 
-    return this.httpClient.post(this.serverUrl, body.toString, { headers });
+    return this.httpClient.post(this.endpoint, body.toString(), { headers }); //era this.serverUrl
   }
-                                                                                    //ServerUrl error, y completar con las demás funciones
+                                                                    //ServerUrl error cambiado a endpoint, y completar con las demás funciones
   delete(id: any){
-    return this.httpClient.delete(`${this.serverUrl}/${id}`);
+    return this.httpClient.delete(`${this.endpoint}/${id}`); //era this.serverUrl
   }
 
 }

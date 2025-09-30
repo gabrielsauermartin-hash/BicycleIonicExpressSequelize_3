@@ -1,10 +1,10 @@
 <form [formGroup]="bicycleForm" (ngSubmit)="createBicycle">
 
   <ion-item>
-    <ion-lable position="floating">Brand</ion-lable>
+    <ion-label position="floating">Brand</ion-label>
     <ion-input formControlName="brand" type="text"></ion-input>
   </ion-item>
-  <ion-note color="danger" *ngIf="getFormControl('brand')?.hasError('required') && getFormControl('brand'?.touched)">
+  <ion-note color="danger" *ngIf="getFormControl('brand')?.hasError('required') && getFormControl('brand'?).touched">
     El brand es obligatorio.
   </ion-note>
 
@@ -12,7 +12,7 @@
     <ion-label position="floating">Model</ion-label>
     <ion-input formControlName="model" type="text"></ion-input>
   </ion-item>
-  <ion-note color="danger" *ngIf="getFormControl('model')?.hasError('required') && getFormControl('model'?.touched)">
+  <ion-note color="danger" *ngIf="getFormControl('model')?.hasError('required') && getFormControl('model'?).touched">
     El model es obligatorio.
   </ion-note>
 
