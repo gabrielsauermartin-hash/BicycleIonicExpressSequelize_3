@@ -32,7 +32,7 @@ app.get("/", (req,res) => {
 require("./routes/bicycle.routes.js")(app);
 
 //set port, listen for requests
-const PORT = process.env.PORT || 8100; //8080
+const PORT = process.env.PORT || 8080; //8100
 
 
 app.listen(PORT, () => {

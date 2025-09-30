@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   selector: 'app-bicycle-form',
   templateUrl: './bicycle-form.page.html',
   styleUrls: ['./bicycle-form.page.scss'],
+  standalone: false
 })
 export class BicycleFormPage implements OnInit {
 

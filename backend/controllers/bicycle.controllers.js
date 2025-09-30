@@ -32,7 +32,7 @@ exports.create = (req, res) => {
 };
 
 //Retrieve all bicycles from the database
-exports.finAll = (req, res) => {
+exports.findAll = (req, res) => {
     Bicycle.findAll()
         .then(data => {
             res.send(data);

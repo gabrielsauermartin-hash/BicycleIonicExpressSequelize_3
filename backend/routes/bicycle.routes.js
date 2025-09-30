@@ -7,7 +7,7 @@ module.exports = app => {
     router.post("/", bicycles.create);
 
     //Retrieve all bicycles
-    router.get("/", bicycles.finAll);
+    router.get("/", bicycles.findAll);
 
     //Retrieve a single bicycle with an ID
     router.get("/:id", bicycles.findOne);
