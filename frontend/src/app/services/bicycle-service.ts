@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class BicycleService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getBicycles() {
+  getAllBicycles() {
     return this.httpClient.get(this.endpoint);
   }
 
@@ -26,8 +27,19 @@ export class BicycleService {
     return this.httpClient.post(this.endpoint, body.toString(), { headers }); //era this.serverUrl
   }
                                                                     //ServerUrl error cambiado a endpoint, y completar con las demás funciones
-  delete(id: any){
+                                                                    
+  delete(id: any): Observable<any> {
     return this.httpClient.delete(`${this.endpoint}/${id}`); //era this.serverUrl
+  }
+
+  update(id: any, data: any): Observable<any> {
+    // Envía la actualización con PUT y los datos nuevos
+    return this.httpClient.put(`${this.endpoint}/${id}`, data);
+  }
+
+  findOne(id: any): Observable<any> {
+    // Solicita una bicicleta específica por ID
+    return this.httpClient.get(`${this.endpoint}/${id}`);
   }
 
 }
