@@ -10,9 +10,18 @@
         <ion-label>
           <h1>{{b.brand}}</h1>
           <p>{{b.model}}</p>
-          <ion-button (click)="deleteBicycle(b.id)">Borrar</ion-button>
+          <ion-buttons slot="end">
+            <ion-button (click)="goToEditBicycle(b.id)">Editar</ion-button>
+            <ion-button (click)="deleteBicycle(b.id)">Borrar</ion-button>
+          </ion-buttons>
         </ion-label>
       </ion-item>
+      <ion-button expand="block" color="primary" (click)="goToAddBicycle()">
+        Agregar bicicleta
+      </ion-button>
+      <ion-button expand="block" color="primary" (click)="goHome()">
+        Regresar
+      </ion-button>
     </ion-list>
 </ion-content>
 

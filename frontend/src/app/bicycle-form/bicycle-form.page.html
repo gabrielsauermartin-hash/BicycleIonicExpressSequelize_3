@@ -11,6 +11,47 @@
     </ion-toolbar>
   </ion-header>
 
+  <form [formGroup]="bicycleForm" (ngSubmit)="onSubmit()">
+
+    <ion-item>
+      <ion-label position="floating">Brand</ion-label>
+      <ion-input formControlName="brand" type="text"></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="getFormControl('brand')?.hasError('required') && getFormControl('brand')?.touched">
+      El brand es obligatorio.
+    </ion-note>
+
+    <ion-item>
+      <ion-label position="floating">Model</ion-label>
+      <ion-input formControlName="model" type="text"></ion-input>
+    </ion-item>
+    <ion-note color="danger" *ngIf="getFormControl('model')?.hasError('required') && getFormControl('model')?.touched">
+      El model es obligatorio.
+    </ion-note>
+    
+    <!--Botón enviar-->
+    <ion-button expand="full" type="submit" [disabled]="!bicycleForm.valid">
+      {{ isAddMode ? 'Crear' : 'Actualizar' }}
+    </ion-button>
+  </form>
+
+
+</ion-content>
+
+<!--
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>bicycle-form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">bicycle-form</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
   <form [formGroup]="bicycleForm" (ngSubmit)="createBicycle()">
 
     <ion-item>
@@ -29,11 +70,20 @@
       El model es obligatorio.
     </ion-note>
 
-    <!--Botón enviar-->
+    
     <ion-button expand="full" type="submit" [disabled]="!bicycleForm.valid">Crear</ion-button>
 
   </form>
 </ion-content>
+-->
+
+<!--Botón enviar-->
+
+
+
+
+
+
 <!--
 <ion-header [translucent]="true">
   <ion-toolbar>
